@@ -1,0 +1,19 @@
+<%- include('../partials/head.ejs') %>
+  <title>Trillium Art Studio</title>
+</head> 
+<body class="albums">
+    <%- include('../partials/header.ejs') %>
+    <div class="inner-container">
+      <%- include('../partials/errorMessage.ejs') %>
+      <%- include('../partials/headerPhotos') %>
+      <h2 class="page-header text-center mb-5">New Album</h2>
+      <form action="/albums" method="POST">
+        <%- include('_form_fields') %>
+        <div class="form-row btn-album-new-edit btn-album-new btn-row">
+          <button class="btn btn-album-create btn-primary" type="submit">Create</button>
+          <a class="btn btn-album-cancel btn-danger" href="/albums">Cancel</a>
+        </div>
+      </form>
+    </div>
+
+<%- include('../partials/footer.ejs') %>

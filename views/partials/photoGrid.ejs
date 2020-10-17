@@ -1,0 +1,24 @@
+
+
+<% photoCoverClass = locals.small ? 'photo-cover-small' : '' %>
+<% photoGridClass = locals.small ? 'photo-grid-small' : '' %>
+<div class="photo-grid <%= photoGridClass %>">
+  <% photos.forEach(photo => { %>
+    <div class="card-group">
+      <div class="card">
+        <div class="card-img-top">
+          <a href="/photos/<%= photo.slug %>">
+            <img class="img-fluid photo-cover<%= photoCoverClass %>" src="<%= photo.coverImagePath %>">
+          </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"><%= photo.title %></h4>
+          <a href="/photos/<%= photo.slug %>" class="btn btn-primary">See More</a>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+
+

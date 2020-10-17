@@ -1,0 +1,56 @@
+@import 'shared/variables.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
+@import 'shared/album.css';
+@import 'shared/photos.css';
+@import 'shared/navbar.css';
+@import 'shared/footer.css';
+@import 'shared/pages.css';
+
+
+body {
+  background: linear-gradient(to right, var(--color-background-one), var(--color-background-two), var(--color-background-three), var(--color-background-four));
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: 'Maven Pro', sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.inner-container {
+  margin: auto 5em;
+}
+
+.page-header {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-one);
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.add-message {
+  color: var(--color-three);
+  font-style: oblique;
+}
+
+.error-message {
+  color:var(--color-three);
+}
+
+@media only screen and (max-width: 992px) {
+  .inner-container {
+    margin: auto 2em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .inner-container {
+    margin: auto;
+  }
+}

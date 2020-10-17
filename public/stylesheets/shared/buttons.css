@@ -1,0 +1,39 @@
+.btn {
+    border: none;
+    border-radius: .25rem;
+    padding: .25rem .5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Maven Pro', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn:focus {
+    background-color: transparent;
+    outline: none !important;
+    box-shadow: none;
+  }
+  
+  .btn-primary {
+    /* color: var(--color-four); */
+    color: var(--color-five);
+    background-color: var(--color-one);
+  }
+  
+  .btn-primary:hover {
+    color: var(--color-three);
+    background-color: var(--color-five);
+  }
+  
+  .btn-danger {
+    color: var(--color-five);
+    background-color: var(--color-three);
+  }
+  
+  .btn-danger:hover {
+    color: var(--color-three);
+    background-color: var(--color-five);
+  }

@@ -1,0 +1,12 @@
+<%- include('../partials/head.ejs') %>
+  <title>Art Gallery</title>
+</head> 
+<body class="photos">
+    <%- include('../partials/header.ejs') %>
+    <div class="inner-container">
+      <%- include('../partials/errorMessage.ejs') %>
+      <%- include('../partials/headerPhotos') %>
+      <%- include('../partials/photoGrid', { photos: photos, small: true }) %>
+    </div>
+
+<%- include('../partials/footer.ejs') %>

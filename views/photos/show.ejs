@@ -1,0 +1,38 @@
+<%- include('../partials/head.ejs') %>
+  <title>Art Gallery</title>
+</head> 
+<body class="photos">
+    <%- include('../partials/header.ejs') %>
+    <div class="inner-container">
+      <%- include('../partials/errorMessage.ejs') %>
+      <%- include('../partials/headerPhotos') %>
+      <div>
+        <a class="btn btn-primary btn-album photo-details-album-button" href="/albums/<%= photo.album.id %>">Collection: <%= photo.album.name %></a>
+      </div>
+      <div class="card card-show my-4">
+        <div class="card-body-show text-center mt-3">
+          <h1 class="card-title-show"><%= photo.title %></h1> 
+          <img class="photo-cover img-fluid" src="<%= photo.coverImagePath %>">
+          <p class="card-text card-desc mt-3">Size: <%= photo.size %></p>
+          <p class="card-text card-desc mt-3">Medium: <%= photo.medium %></p>
+          <p class="card-text card-desc mt-3 pb-5">Price: $<%= photo.price %></p>
+           
+        </div>
+      </div>
+      <div>
+        <a class="btn btn-primary photo-details-album-button" href="/photos">All Photos</a>
+       </div>
+      <div class="btn-show mb-5 pb-5">
+        <% if(currentUser){ %>
+          <a class="btn btn-primary btn-edit" href="/photos/<%= photo.id %>/edit">Edit</a>
+          <%- include('../partials/deleteForm', { url: `/photos/${photo.id}` }) %> 
+        <% } %>
+      </div> 
+    </div>
+  
+  <%- include('../partials/footer.ejs') %>
+
+
+
+
+  

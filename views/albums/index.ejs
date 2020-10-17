@@ -1,0 +1,39 @@
+<%- include('../partials/head.ejs') %>
+  <title>Art Collection</title>
+</head> 
+<body class="albums">
+    <%- include('../partials/header.ejs') %>
+    <div class="inner-container">
+      <%- include('../partials/errorMessage.ejs') %>
+      <%- include('../partials/headerPhotos') %>
+      <h2 class="page-header text-center mb-5">Search Collections</h2>
+      <div class="form-album-search">
+        <form action="/albums" method="GET">
+          <div class="form-row">
+            <div class="form-item form-item-album">
+              <label>Name</label>
+              <input type="text" name="name" value="<%= searchOptions.name %>">
+            </div>
+          </div>
+          <div class="form-row form-row-end">
+            <button class="btn btn-primary mb-4" type="submit">Search</button>
+          </div>
+        </form>
+        <br>
+        <% albums.forEach(album => { %>
+          <div class="album-row">
+            <div class="album-name"><%= album.name %></div>
+            <div class="btn-row btn-album-search">
+              <a class="btn btn-primary" href="/albums/<%= album.id %>">View</a>
+              <% if(currentUser){ %>
+                <a class="btn btn-primary btn-album-view" href="/albums/<%= album.id %>/edit">Edit</a>
+                <%- include('../partials/deleteForm',
+                            { url: `/albums/${album.id}` }) %>
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      </div> 
+    </div>
+
+<%- include('../partials/footer.ejs') %>

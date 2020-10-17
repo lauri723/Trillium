@@ -1,0 +1,40 @@
+<!-- <div class="form-row form-row-photo"> -->
+    <div class="form-item form-item-photo">
+        <label>Title</label>
+        <input type="text" name="title" value="<%= photo.title %>">
+      </div>
+      <div class="form-item form-item-photo">
+        <label>Album</label>
+        <select name="album">
+          <% albums.forEach(album => { %>
+            <% if (album.id === photo.album) { %>
+              <option selected label="<%= album.name %>" value="<%= album.id %>">
+            <% } else { %>
+              <option label="<%= album.name %>" value="<%= album.id %>">
+            <% } %>
+          <% }) %>
+        </select>
+      </div>
+    <!-- </div> -->
+    
+    <div>
+      <div class="form-item form-item-photo">
+        <label>Size</label>
+        <input type="text" name="size" value="<%= photo.size %>">
+      </div>
+      <div class="form-item form-item-photo">
+        <label>Medium</label>
+        <input type="text" name="medium" value="<%= photo.medium %>">
+      </div>
+      <div class="form-item form-item-photo">
+        <label>Price</label>
+        <input type="text" name="price" value="<%= photo.price %>">
+      </div>
+    </div>
+    
+    <div class="form-row form-row-filepond">
+      <div class="form-item form-item-no-grow">
+        <label>Photo</label>
+        <input type="file" name="cover" class="photo-cover filepond">
+      </div>
+    </div>

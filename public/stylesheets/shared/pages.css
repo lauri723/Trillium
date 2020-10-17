@@ -1,0 +1,15 @@
+.pages {
+    color: var(--color-one);
+    font-family: 'Alex Brush', cursive;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.classes, .contact, .bio {
+    background-color: var(--color-six);
+    width: 50%;
+    margin: 3rem auto 6rem;
+    padding: 1rem;
+    box-shadow: 12px 12px 10px rgba(0, 0, 0, 0.2),
+      -12px -12px 10px rgba(0, 0, 0, 0.2);
+}

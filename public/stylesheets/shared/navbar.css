@@ -1,0 +1,14 @@
+#navbar .nav-link {
+    color: #4e777c;
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 1.2em;
+    font-style: bold;
+}
+
+#navbar .nav-link:hover {
+   border-bottom: 3px solid #4e777c;
+}
+
+.upperLink {
+    font-size: 1.4em;
+}
