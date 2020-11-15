@@ -1,0 +1,27 @@
+<%- include('../partials/head.ejs') %>
+  <title>Classes and Events</title>
+</head> 
+<body class="schedules">
+    <%- include('../partials/header.ejs') %>
+    <div class="inner-container">
+      <%- include('../partials/errorMessage.ejs') %>
+      <%- include('../partials/headerSchedules') %>
+      <div class="card card-show my-4">
+        <div class="card-body-show text-center mt-3">
+          <img class="schedule-cover img-fluid" src="<%= schedule.coverImagePath %>">           
+        </div>
+      </div>
+      <div class="btn-show mb-5 pb-5">
+        <% if(currentUser){ %>
+          <a class="btn btn-primary btn-edit" href="/schedules/<%= schedule.id %>/edit">Edit</a>
+          <%- include('../partials/deleteForm', { url: `/schedules/${schedule.id}` }) %> 
+        <% } %>
+      </div> 
+    </div>
+  
+  <%- include('../partials/footer.ejs') %>
+
+
+
+
+  

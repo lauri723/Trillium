@@ -4,7 +4,7 @@
     --photo-cover-aspect-ratio: 1;
   }
   
-  .photo-cover {
+  .student-cover {
     width: var(--photo-cover-width);
     height: calc(var(--photo-cover-width) / var(--photo-cover-aspect-ratio));
     max-width: 600px;
@@ -13,7 +13,7 @@
     margin: auto;
   }
   
-  .photo-cover-small {
+  .student-cover-small {
     --photo-cover-width: var(--photo-cover-width-small);
     max-width: 325px;
     max-height: 325px;
@@ -21,20 +21,27 @@
     object-fit: contain;
   }
   
-  .photo-grid {
+  .student-grid {
     display: grid;
     justify-content: center;
     grid-gap: 2rem;
     grid-template-columns: repeat(auto-fill, var(--photo-cover-width));
   }
   
-  .photo-grid-small {
+  .student-grid-small {
     margin-bottom: 5rem;
     grid-template-columns: repeat(auto-fill, var(--photo-cover-width-small));
   }
   
-  .photo-details {
+  .student-details {
     display: flex;
+  }
+
+  .btn-student-search {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+    margin: auto;
   }
   
   .card {
@@ -64,12 +71,6 @@
     margin: auto;
     padding: 0rem;
   }
-  
-  .card-desc {
-    color: var(--color-four);
-    font-size: 1.4em;
-    font-style: oblique;
-  }
 
   div.card-footer {
     background-color: var(--color-six);
@@ -83,16 +84,6 @@
     justify-content: center;
     margin-bottom: 2em;
   }
-  
-  .photo-details-album-button {
-    display: flex;
-    margin: auto;
-    margin-bottom: 3rem;
-    justify-content: center;
-    width: 40%;
-    max-width: 600px;
-  }
-  
   
   .btn.btn-new, .btn.btn-edit {
     margin-right: 2em;
@@ -117,7 +108,7 @@
   }
   
   @media only screen and (max-width: 1085px) {
-    .photo-cover {
+    .student-cover {
       max-width: 500px;
       max-height: 500px;
       position: relative;
@@ -134,7 +125,7 @@
   }
   
   @media only screen and (max-width: 600px) {
-    .photo-cover {
+    .student-cover {
       max-width: 400px;
       max-height: 400px;
     }
@@ -146,14 +137,14 @@
       padding-top: 1em;
       padding-bottom: 1em;
     }
-    .photo-cover {
+    .student-cover {
       max-width: 375px;
       max-height: 375px;
     }
   } 
   
   @media only screen and (max-width: 350px) {
-    .photo-cover {
+    .student-cover {
       max-width: 250px;
       max-height: 250px;
     }

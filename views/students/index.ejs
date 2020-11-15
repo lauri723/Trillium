@@ -1,0 +1,30 @@
+<%- include('../partials/head.ejs') %>
+  <title>Students' Gallery</title>
+</head> 
+<body id="students">
+<%- include('../partials/header.ejs') %>
+<div class="inner-container">
+  <h2 class="page-header header-student text-center">Search Students</h2>
+  <div class="form-student-search">
+
+  <form class="form-student" action="/students" method="GET">
+      <div class="form-item form-item-student">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= searchOptions.name %>">
+      </div>
+      <div class="form-row form-row-end">
+        <button class="btn btn-primary btn-student-search" type="submit">Search</button>
+      </div>
+  </form>
+  <br>
+  <%- include('../partials/errorMessage.ejs') %>
+  <%- include('../partials/headerStudents') %>
+  <%- include('../partials/studentGrid', { students: students, small: true }) %>
+</div>
+
+<%- include('../partials/footer.ejs') %>
+
+
+    
+      
+

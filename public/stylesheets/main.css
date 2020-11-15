@@ -7,6 +7,8 @@
 @import 'shared/navbar.css';
 @import 'shared/footer.css';
 @import 'shared/pages.css';
+@import 'shared/students.css';
+@import 'shared/schedules.css';
 
 
 body {

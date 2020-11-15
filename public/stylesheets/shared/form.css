@@ -1,4 +1,4 @@
-.form-item-photo {
+.form-item-photo, .form-item-student {
     display: flex;
     flex-direction: column;
     margin: auto 2rem;
@@ -17,7 +17,7 @@
     justify-content: center;
   }
   
-  .form-item > label {
+  .form-item> label {
     color:  var(--color-four);
     font-size: 1.4em;
     margin-bottom: .25rem;
@@ -27,7 +27,7 @@
   .form-item input, .form-item select, .form-item textarea {
     height: 3rem;
     padding: .25rem .5rem;
-    border: none;
+    border: 1px solid var(--color-four);
     border-radius: .25rem;
     background-color: var(--color-five);
     color: var(--color-three);
@@ -41,6 +41,8 @@
   .filepond--root {
     font-family: 'Maven Pro', sans-serif;
     margin-bottom: 0;
+    border: 1px solid var(--color-four);
+    border-radius: .25rem;
   }
   
   .filepond--panel-root {

@@ -1,0 +1,29 @@
+
+<%- include('../partials/head.ejs') %>
+  <title>Students' Gallery</title>
+</head> 
+<body class="students">
+    <%- include('../partials/header.ejs') %>
+    <div class="inner-container">
+      <%- include('../partials/errorMessage.ejs') %>
+      <%- include('../partials/headerStudents') %>
+      <div class="card card-show my-4">
+        <div class="card-body-show text-center mt-3">
+          <h1 class="card-title-show"><%= student.name %></h1> 
+          <img class="student-cover img-fluid" src="<%= student.coverImagePath %>">           
+        </div>
+      </div>
+      <div class="btn-show mb-5 pb-5">
+        <% if(currentUser){ %>
+          <a class="btn btn-primary btn-edit" href="/students/<%= student.id %>/edit">Edit</a>
+          <%- include('../partials/deleteForm', { url: `/students/${student.id}` }) %> 
+        <% } %>
+      </div> 
+    </div>
+  
+  <%- include('../partials/footer.ejs') %>
+
+
+
+
+  

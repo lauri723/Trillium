@@ -32,10 +32,12 @@ router.post('/', isLoggedIn, async (req, res) => {
   const album = new Album({
     name: req.body.name
   })
+  console.log(album.name);
   try {
     const newAlbum = await album.save()
-    res.redirect(`albums/${newAlbum.id}`)
-  } catch {
+    res.redirect(`albums/${newAlbum.slug}`)
+  } catch (err) {
+    console.log (err);
     res.render('albums/new', {
       album: album,
       errorMessage: 'Error creating Album'
@@ -43,10 +45,10 @@ router.post('/', isLoggedIn, async (req, res) => {
   }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/:slug', async (req, res) => {
   try {
-    const album = await Album.findById(req.params.id)
-    const photos = await Photo.find({ album: album.id }).limit(6).exec()
+    const album = await Album.findOne({ slug: req.params.slug })
+    const photos = await Photo.find({ album: album.id })
     res.render('albums/show', {
       album: album,
       photosByAlbum: photos
@@ -71,7 +73,7 @@ router.put('/:id', isLoggedIn, async (req, res) => {
     album = await Album.findById(req.params.id)
     album.name = req.body.name
     await album.save()
-    res.redirect(`/albums/${album.id}`)
+    res.redirect(`/albums/${album.slug}`)
   } catch {
     if (album == null) {
       res.redirect('/')
@@ -94,7 +96,7 @@ router.delete('/:id', isLoggedIn, async (req, res) => {
     if (album == null) {
       res.redirect('/')
     } else {
-      res.redirect(`/albums/${album.id}`)
+      res.redirect(`/albums/${album.slug}`)
     }
   }
 })

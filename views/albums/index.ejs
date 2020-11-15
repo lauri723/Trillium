@@ -24,7 +24,7 @@
           <div class="album-row">
             <div class="album-name"><%= album.name %></div>
             <div class="btn-row btn-album-search">
-              <a class="btn btn-primary" href="/albums/<%= album.id %>">View</a>
+              <a class="btn btn-primary" href="/albums/<%= album.slug %>">View</a>
               <% if(currentUser){ %>
                 <a class="btn btn-primary btn-album-view" href="/albums/<%= album.id %>/edit">Edit</a>
                 <%- include('../partials/deleteForm',

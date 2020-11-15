@@ -7,7 +7,7 @@
       <%- include('../partials/errorMessage.ejs') %>
       <%- include('../partials/headerPhotos') %>
       <div>
-        <a class="btn btn-primary btn-album photo-details-album-button" href="/albums/<%= photo.album.id %>">Collection: <%= photo.album.name %></a>
+        <a class="btn btn-primary btn-album photo-details-album-button" href="/albums/<%= photo.album.slug %>">Collection: <%= photo.album.name %></a>
       </div>
       <div class="card card-show my-4">
         <div class="card-body-show text-center mt-3">

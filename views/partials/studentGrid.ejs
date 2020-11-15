@@ -1,0 +1,30 @@
+
+<% studentCoverClass = locals.small ? 'student-cover-small' : '' %>
+<% studentGridClass = locals.small ? 'student-grid-small' : '' %>
+<div class="student-grid <%= studentGridClass %>">
+  <% students.forEach(student => { %>
+    <div class="card-group">
+      <div class="card">
+        <div class="card-img-top">
+            <img class="img-fluid student-cover<%= studentCoverClass %>" src="<%= student.coverImagePath %>">
+          </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"><%= student.name %></h4>
+        </div>
+        <div class="card-footer">
+         
+          <div class="btn-show">
+            <a class="btn btn-primary btn-edit" href="<%= student.url %>">Gallery</a>
+            <% if(currentUser){ %>
+              <a class="btn btn-primary btn-edit" href="/students/<%= student.id %>/edit">Edit</a>
+              <%- include('../partials/deleteForm', { url: `/students/${student.id}` }) %> 
+            <% } %>
+          </div> 
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+

@@ -15,6 +15,8 @@ if(process.env.Node_ENV !== 'production') {
   const indexRouter = require('./routes/index')
   const albumRouter = require('./routes/albums')
   const photoRouter = require('./routes/photos')
+  const studentRouter = require('./routes/students')
+  const scheduleRouter = require('./routes/schedules')
   const userRouter = require('./routes/users')
   
   require('./config/passport')(passport);
@@ -62,6 +64,8 @@ if(process.env.Node_ENV !== 'production') {
   app.use('/', indexRouter)
   app.use('/albums', albumRouter)
   app.use('/photos', photoRouter)
+  app.use('/students', studentRouter)
+  app.use('/schedules', scheduleRouter)
   app.use('/users', userRouter)
   
   

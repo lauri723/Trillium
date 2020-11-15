@@ -1,20 +1,21 @@
+
 <%- include('../partials/head.ejs') %>
   <title>Trillium Art Studio</title>
 </head> 
-<body class="photos">
+<body class="schedules">
     <%- include('../partials/header.ejs') %>
     <div class="inner-container">
       <%- include('../partials/errorMessage.ejs') %>
-      <%- include('../partials/headerPhotos') %>
-      <h2 class="page-header text-center mb-4">Add New Photo</h2>
-     <h5 class="add-message text-center mb-3">*** Don't forget to add any new albums FIRST ***</h5>
-      <form action="/photos" method="POST">
+      <%- include('../partials/headerschedules') %>
+      <h2 class="page-header text-center mb-4">Add New Schedule</h2>
+      <form action="/schedules" method="POST">
         <%- include('_form_fields') %>
         <div class="form-row btn-new-edit btn-row">
           <button class="btn btn-new btn-primary" type="submit">Create</button>
-          <a class="btn btn-danger" href="/photos">Cancel</a>
+          <a class="btn btn-danger" href="/schedules">Cancel</a>
         </div>
       </form>
     </div>
 
 <%- include('../partials/footer.ejs') %>
+

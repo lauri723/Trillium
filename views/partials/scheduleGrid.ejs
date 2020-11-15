@@ -1,0 +1,27 @@
+
+<% scheduleCoverClass = locals.small ? 'schedule-cover-small' : '' %>
+<% scheduleGridClass = locals.small ? 'schedule-grid-small' : '' %>
+<div>
+  <% schedules.forEach(schedule => { %>
+    <!-- <div class="card-group"> -->
+      <!-- <div class="card" style="width: 36rem;"> -->
+        <div class="container classes text-center">
+          <h1 class="pages">Classes and Events</h1>
+          <div class="schedule-image">
+              <img class="img-fluid schedule-cover<%= scheduleCoverClass %>" src="<%= schedule.coverImagePath %>">
+          </div>
+          <!-- <div class="card-footer"> -->
+            <div class="btn-show">
+              <% if(currentUser){ %>
+                <a class="btn btn-primary btn-edit" href="/schedules/<%= schedule.id %>/edit">Edit</a>
+                <%- include('../partials/deleteForm', { url: `/schedules/${schedule.id}` }) %> 
+              <% } %>
+            </div> 
+          <!-- </div> -->
+        </div>
+      <!-- </div> -->
+    <!-- </div> -->
+  <% }) %>
+</div>
+
+
