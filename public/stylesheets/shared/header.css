@@ -27,7 +27,7 @@
   }
   
   .header-nav li a:hover, .header-title:hover {
-    color: var(--color-five);
+    color: var(--color-three);
   }
   
   @media only screen and (max-width: 1052px) {
