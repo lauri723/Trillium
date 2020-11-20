@@ -34,7 +34,7 @@ router.post('/', isLoggedIn, async (req, res) => {
     name: req.body.name,
     url: req.body.url
   })
-  saveCover(student, req.body.cover)
+  saveWebsite(student, req.body.website)
 
   try {
     const newStudent = await student.save()
@@ -73,8 +73,8 @@ router.put('/:id', isLoggedIn, async (req, res) => {
     student = await student.findById(req.params.id)
     student.name = req.body.name
     student.url = req.body.url
-    if (req.body.cover != null && req.body.cover !== '') {
-      saveCover(student, req.body.cover)
+    if (req.body.website != null && req.body.website !== '') {
+      saveWebsite(student, req.body.website)
     }
     await student.save()
     res.redirect(`/students/${student.slug}`)
@@ -132,12 +132,12 @@ async function renderFormPage(res, student, form, hasError = false) {
   }
 }
 
-function saveCover(student, coverEncoded) {
-  if (coverEncoded == null) return
-  const cover = JSON.parse(coverEncoded)
-  if (cover != null && imageMimeTypes.includes(cover.type)) {
-    student.coverImage = new Buffer.from(cover.data, 'base64')
-    student.coverImageType = cover.type
+function saveWebsite(student, websiteEncoded) {
+  if (websiteEncoded == null) return
+  const website = JSON.parse(websiteEncoded)
+  if (website != null && imageMimeTypes.includes(website.type)) {
+    student.websiteImage = new Buffer.from(website.data, 'base64')
+    student.websiteImageType = website.type
   }
 }
 

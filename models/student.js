@@ -14,11 +14,11 @@ const studentSchema = new mongoose.Schema({
     required: true,
     default: Date.now
   },
-  coverImage: {
+  websiteImage: {
     type: Buffer,
     required: true
   },
-  coverImageType: {
+  websiteImageType: {
     type: String,
     required: true
   },
@@ -36,9 +36,9 @@ studentSchema.pre('validate', function(next) {
   next()
 })
 
-studentSchema.virtual('coverImagePath').get(function() {
-  if (this.coverImage != null && this.coverImageType != null) {
-    return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+studentSchema.virtual('websiteImagePath').get(function() {
+  if (this.websiteImage != null && this.websiteImageType != null) {
+    return `data:${this.websiteImageType};charset=utf-8;base64,${this.websiteImage.toString('base64')}`
   }
 })
 

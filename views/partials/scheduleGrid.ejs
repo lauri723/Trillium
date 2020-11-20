@@ -1,5 +1,5 @@
 
-<% scheduleCoverClass = locals.small ? 'schedule-cover-small' : '' %>
+<% scheduleListingClass = locals.small ? 'schedule-listing-small' : '' %>
 <% scheduleGridClass = locals.small ? 'schedule-grid-small' : '' %>
 <div>
   <% schedules.forEach(schedule => { %>
@@ -8,7 +8,7 @@
         <div class="container classes text-center">
           <h1 class="pages">Classes and Events</h1>
           <div class="schedule-image">
-              <img class="img-fluid schedule-cover<%= scheduleCoverClass %>" src="<%= schedule.coverImagePath %>">
+              <img class="img-fluid schedule-listing<%= scheduleListingClass %>" src="<%= schedule.listingImagePath %>">
           </div>
           <!-- <div class="card-footer"> -->
             <div class="btn-show">

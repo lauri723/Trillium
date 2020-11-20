@@ -1,20 +1,20 @@
 :root {
-    --photo-cover-width-small: 325px;
-    --photo-cover-width: 600px;
-    --photo-cover-aspect-ratio: 1;
+    --photo-website-width-small: 325px;
+    --photo-website-width: 600px;
+    --photo-website-aspect-ratio: 1;
   }
   
-  .student-cover {
-    width: var(--photo-cover-width);
-    height: calc(var(--photo-cover-width) / var(--photo-cover-aspect-ratio));
+  .student-website {
+    width: var(--photo-website-width);
+    height: calc(var(--photo-website-width) / var(--photo-website-aspect-ratio));
     max-width: 600px;
     max-height: 600px;
     object-fit: contain;
     margin: auto;
   }
   
-  .student-cover-small {
-    --photo-cover-width: var(--photo-cover-width-small);
+  .student-website-small {
+    --photo-website-width: var(--photo-website-width-small);
     max-width: 325px;
     max-height: 325px;
     display: grid;
@@ -25,12 +25,12 @@
     display: grid;
     justify-content: center;
     grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fill, var(--photo-cover-width));
+    grid-template-columns: repeat(auto-fill, var(--photo-website-width));
   }
   
   .student-grid-small {
     margin-bottom: 5rem;
-    grid-template-columns: repeat(auto-fill, var(--photo-cover-width-small));
+    grid-template-columns: repeat(auto-fill, var(--photo-website-width-small));
   }
   
   .student-details {
@@ -108,7 +108,7 @@
   }
   
   @media only screen and (max-width: 1085px) {
-    .student-cover {
+    .student-website {
       max-width: 500px;
       max-height: 500px;
       position: relative;
@@ -125,7 +125,7 @@
   }
   
   @media only screen and (max-width: 600px) {
-    .student-cover {
+    .student-website {
       max-width: 400px;
       max-height: 400px;
     }
@@ -137,14 +137,14 @@
       padding-top: 1em;
       padding-bottom: 1em;
     }
-    .student-cover {
+    .student-website {
       max-width: 375px;
       max-height: 375px;
     }
   } 
   
   @media only screen and (max-width: 350px) {
-    .student-cover {
+    .student-website {
       max-width: 250px;
       max-height: 250px;
     }

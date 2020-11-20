@@ -11,11 +11,11 @@ const scheduleSchema = new mongoose.Schema({
     required: true,
     default: Date.now
   },
-  coverImage: {
+  listingImage: {
     type: Buffer,
     required: true
   },
-  coverImageType: {
+  listingImageType: {
     type: String,
     required: true
   },
@@ -33,9 +33,9 @@ scheduleSchema.pre('validate', function(next) {
   next()
 })
 
-scheduleSchema.virtual('coverImagePath').get(function() {
-  if (this.coverImage != null && this.coverImageType != null) {
-    return `data:${this.coverImageType};charset=utf-8;base64,${this.coverImage.toString('base64')}`
+scheduleSchema.virtual('listingImagePath').get(function() {
+  if (this.listingImage != null && this.listingImageType != null) {
+    return `data:${this.listingImageType};charset=utf-8;base64,${this.listingImage.toString('base64')}`
   }
 })
 

@@ -26,7 +26,7 @@ router.post('/', isLoggedIn, async (req, res) => {
   const schedule = new Schedule({
     name: req.body.name,
   })
-  saveCover(schedule, req.body.cover)
+  saveListing(schedule, req.body.listing)
 
   try {
     const newSchedule = await schedule.save()
@@ -65,8 +65,8 @@ router.put('/:id', isLoggedIn, async (req, res) => {
   try {
     schedule = await Schedule.findById(req.params.id)
     schedule.name = req.body.name
-    if (req.body.cover != null && req.body.cover !== '') {
-      saveCover(schedule, req.body.cover)
+    if (req.body.listing != null && req.body.listing !== '') {
+      saveListing(schedule, req.body.listing)
     }
     await schedule.save()
     res.redirect(`/schedules/${schedule.slug}`)
@@ -124,12 +124,12 @@ async function renderFormPage(res, schedule, form, hasError = false) {
   }
 }
 
-function saveCover(schedule, coverEncoded) {
-  if (coverEncoded == null) return
-  const cover = JSON.parse(coverEncoded)
-  if (cover != null && imageMimeTypes.includes(cover.type)) {
-    schedule.coverImage = new Buffer.from(cover.data, 'base64')
-    schedule.coverImageType = cover.type
+function saveListing(schedule, listingEncoded) {
+  if (listingEncoded == null) return
+  const listing = JSON.parse(listingEncoded)
+  if (listing != null && imageMimeTypes.includes(listing.type)) {
+    schedule.listingImage = new Buffer.from(listing.data, 'base64')
+    schedule.listingImageType = listing.type
   }
 }
 
